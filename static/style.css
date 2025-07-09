@@ -12,8 +12,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* ✅ เปลี่ยนจาก min-height */
-  overflow: hidden; /* ✅ ปิด scroll ทั้งหน้าจอ */
+  height: 100vh; /* เปลี่ยนจาก min-height */
+  overflow: hidden; /* ปิด scroll ทั้งหน้าจอ */
 }
 
 .container {
@@ -25,8 +25,8 @@ body {
   align-items: center;
   justify-content: center;
   /* padding-top: -2rem; */
-  height: 100vh; /* ✅ บังคับให้พอดีกับหน้าจอ */
-  overflow: hidden; /* ✅ ป้องกันการ scroll ด้านใน */
+  height: 100vh; /* บังคับให้พอดีกับหน้าจอ */
+  overflow: hidden; /* ป้องกันการ scroll ด้านใน */
 }
 
 .card {
@@ -56,7 +56,7 @@ body {
 
 .card-right {
   flex: 1;
-  margin-left: 0; /* ✅ ดันไปชิดขวา */
+  margin-left: 0; /* ดันไปชิดขวา */
   display: flex;
   flex-direction: column;
   max-width: 396px;
@@ -204,7 +204,7 @@ form input {
 
 .guest-text a:hover {
   /* background-color: #e8f0fe; */
-  text-decoration: underline; /* ✅ แสดงเส้นใต้ตอน hover */
+  text-decoration: underline; /* แสดงเส้นใต้ตอน hover */
 }
 
 .buttons {
@@ -336,7 +336,7 @@ button:hover {
 
   .signin-title-wrapper {
     display: block;
-    margin: 0 0 25px 0; /* <-- เพิ่ม gap ล่าง */
+    margin: 0 0 25px 0; /* เพิ่ม gap ล่าง */
     text-align: left;
   }
 
@@ -367,7 +367,7 @@ button:hover {
     text-align: center;
     font-size: 12px;
     padding: 16px 15px;
-    margin-top: 20px;  /* <-- ดัน footer ชิดล่าง */
+    margin-top: 20px;  /* ดัน footer ชิดล่าง */
     flex-shrink: 0;
   }
 
@@ -398,18 +398,18 @@ button:hover {
   color: #1f1f1f;
 }
 
-/* ✅ ใช้เฉพาะในหน้า password */
+/* ใช้เฉพาะในหน้า password */
 .password-page .checkbox-container {
   display: flex;
-  flex-direction: row;      /* ✅ ให้อยู่ในบรรทัดเดียวกัน */
-  align-items: center;      /* ✅ จัดให้ checkbox กับ label อยู่แนวเดียวกัน */
+  flex-direction: row;      /* ให้อยู่ในบรรทัดเดียวกัน */
+  align-items: center;      /* จัดให้ checkbox กับ label อยู่แนวเดียวกัน */
   justify-content: flex-start;
   gap: 10px;
   margin-top: 10px;
   margin-left: -0px;
   font-size: 14px;
   color: #1f1f1f;
-  width: fit-content;       /* ✅ แค่พอดีกับเนื้อหา ไม่กินเต็มแถว */
+  width: fit-content;       /* แค่พอดีกับเนื้อหา ไม่กินเต็มแถว */
 }
 
 .password-page .checkbox-container input[type="checkbox"] {
@@ -420,7 +420,7 @@ button:hover {
 }
 
 .password-page .checkbox-container label {
-  white-space: nowrap; /* 👈 ห้ามขึ้นบรรทัดใหม่ */
+  white-space: nowrap; /* ห้ามขึ้นบรรทัดใหม่ */
   position: relative;
   top: -8px;
 }
@@ -532,7 +532,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 60px; /* หรือมากกว่านี้เช่น 80px เพื่อเลื่อนลง */
+  padding-top: 60px; /* มากกว่านี้เพื่อเลื่อนลง */
 }
 
 
@@ -550,5 +550,46 @@ button:hover {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 600px) {
+  .container-submit {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .signing-card {
+    box-shadow: none !important;
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .logo-submit {
+    height: 60px !important;
+    margin-bottom: 20px;
+  }
+
+  .signing-title {
+    font-size: 22px !important;
+    margin-bottom: 10px;
+  }
+
+  .signing-desc {
+    font-size: 16px !important;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .spinner,
+  .small-spinner {
+    width: 30px !important;
+    height: 30px !important;
+    border-width: 4px;
   }
 }
