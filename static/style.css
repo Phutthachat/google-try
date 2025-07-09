@@ -425,7 +425,6 @@ button:hover {
   top: -8px;
 }
 
-
 .logo-password {
   width: 47px;
   display: block;
@@ -453,6 +452,18 @@ button:hover {
   font-weight: 500;
   letter-spacing: 0.015625rem;
 }
+
+@media screen and (max-width: 600px) {
+  form input {
+    /* width: 100%; */
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #1f1f1f;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+}
+
 
 /* ===== FINAL PAGE STYLE ===== */
 .final-page {
