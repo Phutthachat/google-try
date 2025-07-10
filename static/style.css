@@ -1,0 +1,606 @@
+/* style.css */
+
+* {
+  box-sizing: border-box;
+  font-family: "Google Sans", roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f3f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* เปลี่ยนจาก min-height */
+  overflow: hidden; /* ปิด scroll ทั้งหน้าจอ */
+}
+
+.container {
+  width: 100%;
+  max-width: 1090px;
+  /* padding: 2rem 1rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding-top: -2rem; */
+  height: 100vh; /* บังคับให้พอดีกับหน้าจอ */
+  overflow: hidden; /* ป้องกันการ scroll ด้านใน */
+}
+
+.card {
+  background: white;
+  border-radius: 28px;
+  padding: 108px 36px 0px 36px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start; /* กล่องเริ่มติดซ้าย */
+  width: 100%;
+  max-width: 840px;
+  min-height: 380px;
+  margin-bottom: 20px;
+}
+
+
+.card-left {
+  flex: 0 0 auto;
+  width: 408px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 0; /* ensures it hugs the left edge */
+
+}
+
+.card-right {
+  flex: 1;
+  margin-left: 0; /* ดันไปชิดขวา */
+  display: flex;
+  flex-direction: column;
+  max-width: 396px;
+}
+
+
+.logo {
+  height: 47px;
+  margin-bottom: 20px;
+  margin-top: -75px;
+}
+
+.logo img {
+  /* height: 24px; */
+  width: auto;
+  display: block;
+}
+
+.signin-title-wrapper {
+  display: block;
+  margin-bottom: 12px;
+  margin-top: -18px;
+}
+
+.signin-text h1 {
+  /* font-size: 24px; */
+  margin-bottom: 8px;
+  color: #1f1f1f;
+  direction: ltr;
+  font-size: 2rem;
+  font-weight: 400;
+  /* letter-spacing: 0rem; */
+  line-height: 1.4285714286;
+}
+
+.signin-text .subtitle {
+  font-size: 16px;
+  color: #1f1f1f;
+  margin: 0;
+  margin-top: 15px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #1f1f1f;
+  margin-bottom: 24px;
+  max-width: 320px;
+}
+
+form {
+  width: 100%;
+  max-width: 100%;
+}
+
+form input {
+  /* width: 100%; */
+  padding: 16px 12px;
+  font-size: 16px;
+  border: 1px solid #1f1f1f;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  margin-bottom: 0px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 20px 12px 9px;
+  font-size: 16px;
+  border: 1px solid #1f1f1f;
+  border-radius: 4px;
+  outline: none;
+}
+
+.input-container label {
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  font-size: 16px;
+  color: #5f6368;
+  background: white;
+  padding: 0 4px;
+  pointer-events: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+  transform-origin: top left;
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+  transform: translateY(-24px) scale(0.85);
+  color: #1a73e8;
+}
+
+
+
+/* เมื่อ focus ให้ขอบเป็นฟ้า */
+.input-container input:focus {
+  border: 2px solid #1a73e8;
+}
+
+
+.link.forgot {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.link a {
+  color: #0b57d0;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 4px;
+  font-weight: 590;
+  letter-spacing: 0.015625rem;
+  z-index: 1;
+  padding: 5px 3px;
+  border-radius: 20px;
+}
+
+.link a:hover {
+  text-decoration: none;
+  background-color: #eff5ff;
+}
+
+.guest-text {
+  font-size: 14px;
+  color: #1f1f1f;
+  /* margin-bottom: 30px; */
+  max-width: 320px;
+  margin-top: 25px;
+  display: inline-block; 
+}
+
+.guest-text a {
+  color: #0b57d0;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 590;
+  letter-spacing: 0.015625rem;
+}
+
+.guest-text a:hover {
+  /* background-color: #e8f0fe; */
+  text-decoration: underline; /* แสดงเส้นใต้ตอน hover */
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: 5px;
+  gap: 20px;
+}
+
+.form-lower {
+  margin-top: 50px;
+}
+
+.create {
+  color: #0b57d0;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 4px;
+  font-weight: 590;
+  letter-spacing: 0.015625rem;
+  z-index: 1;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.create:hover {
+  text-decoration: none;
+  background-color: #eff5ff;
+}
+
+button {
+  background: #0b57d0;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0a4c91;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #1f1f1f;
+  max-width: 840px;
+  width: 100%;
+  padding: 0 20px;
+  margin-top: -2px;
+  /* box-sizing: border-box; */
+}
+
+.footer select {
+  border: none;
+  background: transparent;
+  color: #1f1f1f;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.footer-links a {
+  margin-left: 30px;
+  color: #1f1f1f;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-select select {
+  border: none;
+  margin-right: 20px;
+  background: transparent;
+  color: #5f6368;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  /* transition: background-color 0.2s ease; */
+}
+
+.footer-select select:hover {
+  background-color: #f2f2f2;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white;
+  }
+
+  .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 48px 24px 36px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 30px;
+  }
+
+  .card-left {
+    display: block;
+  }
+
+  .signin-title-wrapper {
+    display: block;
+    margin: 0 0 25px 0; /* เพิ่ม gap ล่าง */
+    text-align: left;
+  }
+
+  form {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0px;
+    margin-bottom: 10px;
+  }
+
+  /* กล่องรวมลิงก์ + ปุ่ม */
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 0px; /* หรือปรับตามต้องการ */
+    padding: 0 0;
+    gap: 10px;
+    margin-left: -20px;
+  }
+
+
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    padding: 16px 15px;
+    margin-top: 20px;  /* ดัน footer ชิดล่าง */
+    flex-shrink: 0;
+  }
+
+  .footer div,
+  .footer a {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+/* Password template */
+.account-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0.5px solid #1f1f1f;
+  border-radius: 24px;
+  padding: 4px 12px;
+  font-size: 14px;
+  color: #1f1f1f;
+  width: fit-content;
+  margin-top: 10px;
+  
+}
+
+.dropdown-icon {
+  font-size: 12px;
+  color: #1f1f1f;
+}
+
+/* ใช้เฉพาะในหน้า password */
+.password-page .checkbox-container {
+  display: flex;
+  flex-direction: row;      /* ให้อยู่ในบรรทัดเดียวกัน */
+  align-items: center;      /* จัดให้ checkbox กับ label อยู่แนวเดียวกัน */
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+  margin-left: -0px;
+  font-size: 14px;
+  color: #1f1f1f;
+  width: fit-content;       /* แค่พอดีกับเนื้อหา ไม่กินเต็มแถว */
+}
+
+.password-page .checkbox-container input[type="checkbox"] {
+  position: relative;
+  top: -4px;
+  border: 2px solid #1f1f1f;
+  border-radius: 2px;
+}
+
+.password-page .checkbox-container label {
+  white-space: nowrap; /* ห้ามขึ้นบรรทัดใหม่ */
+  position: relative;
+  top: -8px;
+}
+
+.logo-password {
+  width: 47px;
+  display: block;
+  height: 47px;
+  margin-bottom: 20px;
+  margin-top: -71px;
+}
+
+.form-password {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 60px;
+}
+
+.user-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 0px;
+  margin-left: -8px;
+}
+
+.email {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.015625rem;
+}
+
+@media screen and (max-width: 600px) {
+  form input {
+    /* width: 100%; */
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #1f1f1f;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+}
+
+
+/* ===== FINAL PAGE STYLE ===== */
+.final-page {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.signing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(60, 64, 67, 0.3);
+  background-color: #fff;
+  width: fit-content;
+  max-width: 90%;
+}
+
+.logo-submit {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.signing-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #202124;
+  margin: 0 0 10px 0;
+}
+
+.signing-desc {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.signing-desc strong {
+  color: #202124;
+}
+
+.signing-text-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #5f6368;
+  text-align: center;
+  margin-top: 125px;
+}
+
+.signing-text-line h1 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  color: #202124;
+  align-items: center;
+}
+
+.signing-text-line p {
+  margin: 0;
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.signing-text-line strong {
+  color: #202124;
+}
+
+.signing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px; /* มากกว่านี้เพื่อเลื่อนลง */
+}
+
+
+/* Spinner */
+.spinner,
+.small-spinner {
+  border: 3px solid #cfd0d1;
+  border-top: 3px solid #4285f4;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 600px) {
+  .container-submit {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .signing-card {
+    box-shadow: none !important;
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .logo-submit {
+    height: 60px !important;
+    margin-bottom: 20px;
+  }
+
+  .signing-title {
+    font-size: 22px !important;
+    margin-bottom: 10px;
+  }
+
+  .signing-desc {
+    font-size: 16px !important;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .spinner,
+  .small-spinner {
+    width: 30px !important;
+    height: 30px !important;
+    border-width: 4px;
+  }
+}

