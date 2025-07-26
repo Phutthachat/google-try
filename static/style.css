@@ -12,8 +12,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* เปลี่ยนจาก min-height */
-  overflow: hidden; /* ปิด scroll ทั้งหน้าจอ */
+  height: 100vh; 
+  overflow: hidden; 
 }
 
 .container {
@@ -25,8 +25,8 @@ body {
   align-items: center;
   justify-content: center;
   /* padding-top: -2rem; */
-  height: 100vh; /* บังคับให้พอดีกับหน้าจอ */
-  overflow: hidden; /* ป้องกันการ scroll ด้านใน */
+  height: 100vh; 
+  overflow: hidden; 
 }
 
 .card {
@@ -36,7 +36,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-start; /* กล่องเริ่มติดซ้าย */
+  justify-content: flex-start; 
   width: 100%;
   max-width: 840px;
   min-height: 380px;
@@ -50,13 +50,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-left: 0; /* ensures it hugs the left edge */
+  margin-left: 0; 
 
 }
 
 .card-right {
   flex: 1;
-  margin-left: 0; /* ดันไปชิดขวา */
+  margin-left: 0;
   display: flex;
   flex-direction: column;
   max-width: 396px;
@@ -155,9 +155,6 @@ form input {
   color: #1a73e8;
 }
 
-
-
-/* เมื่อ focus ให้ขอบเป็นฟ้า */
 .input-container input:focus {
   border: 2px solid #1a73e8;
 }
@@ -204,7 +201,7 @@ form input {
 
 .guest-text a:hover {
   /* background-color: #e8f0fe; */
-  text-decoration: underline; /* แสดงเส้นใต้ตอน hover */
+  text-decoration: underline;
 }
 
 .buttons {
@@ -349,14 +346,13 @@ button:hover {
     margin-bottom: 10px;
   }
 
-  /* กล่องรวมลิงก์ + ปุ่ม */
   .buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 0px; /* หรือปรับตามต้องการ */
+    margin-top: 0px; 
     padding: 0 0;
     gap: 10px;
     margin-left: -20px;
@@ -367,7 +363,7 @@ button:hover {
     text-align: center;
     font-size: 12px;
     padding: 16px 15px;
-    margin-top: 20px;  /* ดัน footer ชิดล่าง */
+    margin-top: 20px;
     flex-shrink: 0;
   }
 
@@ -398,18 +394,17 @@ button:hover {
   color: #1f1f1f;
 }
 
-/* ใช้เฉพาะในหน้า password */
 .password-page .checkbox-container {
   display: flex;
-  flex-direction: row;      /* ให้อยู่ในบรรทัดเดียวกัน */
-  align-items: center;      /* จัดให้ checkbox กับ label อยู่แนวเดียวกัน */
+  flex-direction: row;
+  align-items: center;
   justify-content: flex-start;
   gap: 10px;
   margin-top: 10px;
   margin-left: -0px;
   font-size: 14px;
   color: #1f1f1f;
-  width: fit-content;       /* แค่พอดีกับเนื้อหา ไม่กินเต็มแถว */
+  width: fit-content;
 }
 
 .password-page .checkbox-container input[type="checkbox"] {
@@ -420,7 +415,7 @@ button:hover {
 }
 
 .password-page .checkbox-container label {
-  white-space: nowrap; /* ห้ามขึ้นบรรทัดใหม่ */
+  white-space: nowrap;
   position: relative;
   top: -8px;
 }
@@ -465,7 +460,7 @@ button:hover {
 }
 
 
-/* ===== FINAL PAGE STYLE ===== */
+/* FINAL PAGE STYLE */
 .final-page {
   background-color: #fff;
   display: flex;
@@ -543,7 +538,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 60px; /* มากกว่านี้เพื่อเลื่อนลง */
+  padding-top: 60px; 
 }
 
 
